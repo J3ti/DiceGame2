@@ -11,10 +11,6 @@ namespace DiceGame
         private string name;
         private int guess;
 
-        public Score() 
-        { 
-        }
-
         public String Name
         {
             set { name = value; }
@@ -25,6 +21,10 @@ namespace DiceGame
         {
             set { guess = value; }
             get { return guess; }
+        }
+
+        public Score() 
+        { 
         }
 
 
