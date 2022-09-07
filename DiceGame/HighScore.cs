@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    internal class HighScore
+    class HighScore
     {
+        new private FileStream fStream;
+        new private StreamWriter sStream;
+        new private StreamReader sReader;
+
+
+
+        public HighScore() { }
+        public  bool SaveScore(List<Score> yeet)
+        {
+            return true;
+        }
+
     }
+
+    
 }

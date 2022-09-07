@@ -28,8 +28,6 @@ namespace DiceGame
 
             string svar = Console.ReadLine();
 
-
-
             return UI;
 
         }
