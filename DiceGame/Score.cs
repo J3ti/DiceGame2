@@ -23,11 +23,7 @@ namespace DiceGame
             get { return guess; }
         }
 
-        public Score() 
-        { 
-        }
-
-
+        public Score() { }
     }
 }
 
