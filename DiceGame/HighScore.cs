@@ -21,12 +21,11 @@ namespace DiceGame
       try
       {//Filestream tar fram vart vi ska skriva in filen
         FileStream fs = new FileStream("HighScore.txt", FileMode.Append);
-         sw = new StreamWriter(fs);
+        sw = new StreamWriter(fs);
 
         foreach (var player in game)
         {
           sw.WriteLine(player.Name + " || " + player.Guess);
-
         }
 
         return true;
@@ -45,8 +44,10 @@ namespace DiceGame
 
 
     }
+
     public void PrintScore()
     {
+      List<Score> game = new List<Score>();
       fs = new FileStream("HighScore.txt", FileMode.Open);
       sr = new StreamReader(fs);
       string line = sr.ReadLine();
@@ -58,14 +59,33 @@ namespace DiceGame
 
       while (line != null)
       {
+        string phrase = line;
+        string[] temp = phrase.Split("||");
+        Score score = new Score();
+        score.Name = temp[0];
+        score.Guess = Convert.ToInt32(temp[1]);
+        game.Add(score);
+
         line = sr.ReadLine();
-        Console.WriteLine(line);
       }
+
+
       fs.Close();
       sr.Close();
 
+      game.Sort();
+      Console.WriteLine("High Score!");
+      foreach(Score score in game)
+      {
+        Console.WriteLine($"{score.Guess} av spelaren {score.Name}");
+
+      }
     }
+
   }
+
+
 }
+
 
 //  string path = "C:\\Users\\Jespe\\Source\\Repos\\DiceGame2\\DiceGame\\HighScore.txt";

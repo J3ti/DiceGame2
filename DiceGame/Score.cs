@@ -6,25 +6,30 @@ using System.Threading.Tasks;
 
 namespace DiceGame
 {
-    class Score
+  public class Score : IComparable<Score>
+  {
+    private string name;
+    private int guess;
+
+    public String Name
     {
-        private string name;
-        private int guess;
-
-        public String Name
-        {
-            set { name = value; }
-            get { return name; }
-        }
-
-        public int Guess
-        {
-            set { guess = value; }
-            get { return guess; }
-        }
-
-        public Score() { }
+      set { name = value; }
+      get { return name; }
     }
+
+    public int Guess
+    {
+      get; set;
+    }
+
+    public Score() { }
+
+    public int CompareTo(Score other)
+    {
+      return other.Guess.CompareTo(this.Guess);
+
+    }
+  }
 }
 
 

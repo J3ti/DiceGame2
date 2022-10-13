@@ -201,10 +201,11 @@ namespace DiceGame
       newDice = new int[sides];
       return newDice;
 
-
+     
     }
-  }
+     
 
+  }
 }
 
 
